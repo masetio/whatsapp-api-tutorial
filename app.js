@@ -5,7 +5,7 @@ const socketIO = require('socket.io');
 const qrcode = require('qrcode');
 const http = require('http');
 const { phoneNumberFormatter } = require('./helpers/formatter');
-const makeGetRequest =  require('./helpers/dialog');
+const makeGetRequest =  require('./helpers/pushdialog');
 const fileUpload = require('express-fileupload');
 const axios = require('axios');
 const port = process.env.PORT || 8000;
@@ -52,7 +52,7 @@ const db = require('./helpers/db.js');
   
   client.on('message', msg => {
     if (msg.body == '!ping') {
-      msg.reply('pong');
+      msg.reply(makeGetRequest);
     } else if (msg.body == 'good morning') {
       msg.reply('selamat pagi');
     } else if (msg.body == '!groups') {
