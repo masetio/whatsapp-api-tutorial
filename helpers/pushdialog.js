@@ -1,6 +1,5 @@
 const axios = require('axios');
-
-async function makeGetRequest() {
+const makeGetRequest =  {
 
     const  payload = { queryText:'assalamu'alaikum', sessionId: 'abs2342cd1234', languageCode:'id' };
 
