@@ -7,7 +7,9 @@ async function makeGetRequest() {
     let res = await axios.post('https://621f-13-229-66-36.ngrok.io/dialogflow', payload);
 
     let data = res.data;
+    return data;
     console.log(data);
 }
-
-makeGetRequest();
+module.exports = {
+makeGetRequest;
+}
